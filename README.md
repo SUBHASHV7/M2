@@ -12,22 +12,26 @@ Write a C program to print even numbers ranging from M to N (including M and N v
 7.	Continue the loop until you have iterated through all numbers from M to N.
 
 ## PROGRAM:
+```
+#include <stdio.h>
 
+int main() {
+    int M, N;
+    scanf("%d %d", &M, &N);
+    for (int i = M; i <= N; i++) {
+        if (i % 2 == 0) {
+            printf("%d ", i);
+        }
+    }
+    printf("\n");
+    return 0;
+}
+```
 ## OUTPUT:
-
-
-
-
-
-
-
-
-
+![image](https://github.com/user-attachments/assets/267e755e-ab8e-47e2-a913-32dc931df64b)
 
 ## RESULT:
 Thus the program to print even numbers ranging from M to N (including M and N values) has been executed successfully
- 
- 
 
 
 # EX-07-Nested-loop
@@ -45,19 +49,30 @@ Write a C program to print the given triangular pattern using loop.
 5.	Continue the loop until you have printed the entire triangular pattern.
 
 ## PROGRAM:
+```
+#include <stdio.h>
 
+int main() {
+    int rows;
+    scanf("%d", &rows);
+
+    for (int i = 1; i <= rows; i++) {
+        for (int j = 1; j <= i; j++) {
+            printf("* ");
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+```
 
 ## OUTPUT:
-
-
-
-
+![image](https://github.com/user-attachments/assets/db719551-2e96-4a18-a871-e75fbe83cf49)
 
 ## RESULT:
 
 Thus the program to print the given triangular pattern using loop has been executed successfully
- 
- 
 
 
 # EX-08-Functions
@@ -74,22 +89,33 @@ Write a C program to perform addition and subtraction of two numbers using funct
 4.	Call the addition and subtraction functions, passing the two numbers as arguments.
 
 ## PROGRAM:
+```
+#include <stdio.h>
 
+void add(int a, int b) {
+    printf("Addition: %d\n", a + b);
+}
+
+void subtract(int a, int b) {
+    printf("Subtraction: %d\n", a - b);
+}
+
+int main() {
+    int num1, num2;
+    scanf("%d %d", &num1, &num2);
+    add(num1, num2);
+    subtract(num1, num2);
+    return 0;
+}
+```
 
 ## OUTPUT:
-
-
-
-
-
-
+![image](https://github.com/user-attachments/assets/e8ff298c-dd04-4f5a-aa15-50f9b69ef1c1)
 ## RESULT:
 
 Thus the program to perform addition and subtraction of two numbers using functions has been executed successfully
  
  
-
-
 # EX-09-Use For Loop
 
 ## AIM:
@@ -106,18 +132,33 @@ Write a c program to find the sum of odd digits using for loop
 6.	Print the sum of odd digits.
 
 ## PROGRAM:
+```
+#include <stdio.h>
 
+int main() {
+    int num, sum = 0, digit;
+
+    scanf("%d", &num);
+
+    for (; num != 0; num /= 10) {
+        digit = num % 10;
+        if (digit % 2 != 0) {
+            sum += digit;
+        }
+    }
+
+    printf("%d\n", sum);
+
+    return 0;
+}
+```
 
 ## OUTPUT:
-
-
-
+![image](https://github.com/user-attachments/assets/7354ed2e-7453-4aeb-9623-9c9382da087a)
 
 ## RESULT:
 
 Thus the program to find the sum of odd digits using for loop has been executed successfully.
-
-
 
 
 # EX – 10 - Factorial of a Number Using a Function
@@ -136,9 +177,31 @@ d.	After the loop, print the factorial value.
 5.	End
 
 ## PROGRAM:
+```
+#include <stdio.h>
 
+void fact() {
+    int N, i;
+    long fact = 1;
+
+    scanf("%d", &N);
+
+    for (i = 1; i <= N; i++) {
+        fact *= i;
+    }
+
+    printf("%ld\n", fact);
+}
+
+int main() {
+    fact();
+    return 0;
+}
+```
 
 ## OUTPUT:
+![image](https://github.com/user-attachments/assets/cffe0d7e-b8ad-46d1-bb33-bc3b9cd40d5f)
+
 
 ## RESULT:
 The program correctly computes the factorial of a given number using a separate function and displays the result.
